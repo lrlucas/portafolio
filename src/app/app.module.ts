@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,6 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ItemsComponent } from './components/items/items.component';
 import { RoutingModule } from "./app.routes";
 import { InformacionService } from "./services/informacion.service";
+import { ProductosService } from "./services/productos.service";
 
 @NgModule({
   declarations: [
@@ -23,10 +24,11 @@ import { InformacionService } from "./services/informacion.service";
   imports: [
     BrowserModule,
     RoutingModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [
-    InformacionService
+    InformacionService,
+    ProductosService
   ],
   bootstrap: [AppComponent]
 })
