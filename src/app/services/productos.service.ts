@@ -16,9 +16,10 @@ export class ProductosService {
     if(this.productos.length === 0){
       this.http.get('https://templatepaginaweb.firebaseio.com/productos_idx.json')
         .subscribe(value=>{
-          this.cargando = false;
-          this.productos = value;
-          console.log(value)
+          setTimeout(()=>{
+            this.cargando = false;
+            this.productos = value;
+          },1000);
         })
     }
   }

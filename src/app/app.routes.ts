@@ -9,7 +9,7 @@ import { AboutComponent,ItemsComponent,PortafolioComponent } from "./components/
     RouterModule.forRoot([
       { path: 'home', component:PortafolioComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'product', component: ItemsComponent },
+      { path: 'product/:id', component: ItemsComponent },
       { path: '**', pathMatch: 'full', redirectTo:'home' }
     ],{useHash:true})
   ],
