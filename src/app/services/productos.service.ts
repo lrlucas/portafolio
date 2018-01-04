@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 @Injectable()
 export class ProductosService {
 
-  productos:any[] = [];
+  productos:any = [];
   cargando:boolean = true;
 
   constructor(public http:HttpClient) {
@@ -17,6 +17,7 @@ export class ProductosService {
       this.http.get('https://templatepaginaweb.firebaseio.com/productos_idx.json')
         .subscribe(value=>{
           this.cargando = false;
+          this.productos = value;
           console.log(value)
         })
     }
