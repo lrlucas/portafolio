@@ -12,6 +12,11 @@ export class ProductosService {
 
   }
 
+  public cargar_producto(cod:string){
+    return this.http.get(`https://templatepaginaweb.firebaseio.com/productos/${cod}.json`)
+  }
+
+
   public cargar_productos(){
     if(this.productos.length === 0){
       this.http.get('https://templatepaginaweb.firebaseio.com/productos_idx.json')
@@ -23,5 +28,6 @@ export class ProductosService {
         })
     }
   }
+
 
 }

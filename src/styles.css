@@ -22,3 +22,6 @@ svg path,
 svg rect{
   fill: black;
 }
+.miText{
+  color: #ededed;
+}

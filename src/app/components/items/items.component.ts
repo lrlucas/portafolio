@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+import { ProductosService } from "../../services/productos.service";
 
 @Component({
   selector: 'app-items',
@@ -8,10 +9,21 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ItemsComponent implements OnInit {
 
-  constructor(public router:ActivatedRoute) {
+  producto:any = undefined;
+  cod:string = undefined;
+
+  constructor(public router:ActivatedRoute,
+              private productoService:ProductosService) {
     router.params
       .subscribe(parametros=>{
-        console.log(parametros['id'])
+
+        productoService.cargar_producto(parametros['id'])
+          .subscribe(value=>{
+            this.cod = parametros['id'];
+            this.producto = value;
+            console.log(this.producto);
+          })
+
       })
   }
 
