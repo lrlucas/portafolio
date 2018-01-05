@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
               public router:Router) { }
 
   buscar_texto(termino:string){
-    console.log(termino)
+    // console.log(termino)
     this.router.navigate(['buscar',termino])
   }
 
