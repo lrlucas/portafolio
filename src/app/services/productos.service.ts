@@ -14,8 +14,6 @@ export class ProductosService {
   }
 
   public buscar_producto(termino:string){
-    console.log('buscando producto')
-    console.log(this.productos.length)
     if(this.productos.length === 0){
       this.cargar_productos().then(()=>{
         //termino la cargar
@@ -37,9 +35,7 @@ export class ProductosService {
     this.productos.forEach(prod=>{
 
       if( prod.categoria.indexOf(termino) >=0 || prod.titulo.toLowerCase().indexOf(termino) >=0){
-        this.productos_filtrados.push(prod)
-
-        console.log(prod)
+        this.productos_filtrados.push(prod);
 
       }
 

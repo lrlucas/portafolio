@@ -21,7 +21,6 @@ export class ItemsComponent implements OnInit {
           .subscribe(value=>{
             this.cod = parametros['id'];
             this.producto = value;
-            console.log(this.producto);
           })
 
       })
